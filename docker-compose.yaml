@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto:latest
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 125M
+    ports:
+       - "1883:1883"
+       - "9001:9001"
+    volumes:
+      - /home/mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - /home/mosquitto/data:/mosquitto/data
+      - /home/mosquitto/log:/mosquitto/log
+
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    depends_on:
+      - mosquitto
+    image: koenkk/zigbee2mqtt
+    volumes:
+      - /home/zigbee2mqtt:/app/data
+      - /run/udev:/run/udev:ro
+    devices:
+      - /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0:/dev/ttyUSB0
+    deploy:
+      resources:
+        limits:
+          memory: 100M
+    restart: always
+    privileged: true
+    network_mode: host
+    environment:
+      - TZ=Australia/Sydney
+
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    network_mode: host
+    environment:
+      TZ: 'Sydney/Australia'
+      WEBPASSWORD: 'Defender110!'
+    volumes:
+      - './etc-pihole/:/etc/pihole/'
+      - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
+    cap_add:
+      - NET_ADMIN
+    restart: always
