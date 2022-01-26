@@ -18,29 +18,11 @@ availability: true
 advanced:
   last_seen: ISO_8601_local
   network_key:
-    - 136
-    - 230
-    - 125
-    - 75
-    - 186
-    - 118
-    - 181
-    - 181
-    - 129
-    - 67
-    - 189
-    - 115
-    - 180
-    - 235
-    - 155
-    - 140
-  pan_id: 50365
   legacy_api: false
   homeassistant_discovery_topic: homeassistant
   homeassistant_status_topic: homeassistant/status
   homeassistant_legacy_entity_attributes: false
   homeassistant_legacy_triggers: true
-  ikea_ota_use_test_url: false
   log_syslog:
     app_name: Zigbee2MQTT
     eol: /n
@@ -53,52 +35,3 @@ advanced:
     type: '5424'
 device_options:
   legacy: false
-devices:
-  '0x00178801090120b9':
-    friendly_name: Office Desk Lamp
-  '0x84fd27fffe443c96':
-    friendly_name: Office Desk Lamp Button
-  '0x60a423fffee67bbc':
-    friendly_name: Office Monitor Button
-  '0x84fd27fffe472dd3':
-    friendly_name: Master Bedroom Button Left
-  '0x84fd27fffe1b81cc':
-    friendly_name: Master Bedroom Button Right
-  '0x0017880102d9d774':
-    friendly_name: Master Bedroom Lamp Right
-  '0x0017880104e915e4':
-    friendly_name: Master Bedroom Lamp Left
-  '0x00178801086158e0':
-    friendly_name: Family Room TV Light
-  '0x5c0272fffef5ced3':
-    friendly_name: Henry's Room Ikea Remote
-  '0x00158d00069b13b1':
-    friendly_name: Cellar Temperature Humidity Sensor
-  '0x00158d00069b12d4':
-    friendly_name: Master Bedroom Temperature Humidity Sensor
-  '0x00158d00068b6e13':
-    friendly_name: Henry's Room Temperature Humidity Sensor
-  '0x00158d0006938851':
-    friendly_name: Office Temperature Humidity Sensor
-  '0x00158d00068b6de2':
-    friendly_name: Kitchen Temperature Humidity Sensor
-  '0x00158d000693a648':
-    friendly_name: Dining Room Temperature Humidity Sensor
-  '0x0017880104636fc9':
-    friendly_name: Carport Light Rear
-  '0x00178801027dab6e':
-    friendly_name: Carport Light Front
-  '0x0017880104eb9597':
-    friendly_name: Carport Light Middle
-  '0x001788010649042e':
-    friendly_name: Carport Motion Sensor
-  '0x001788010916ba7d':
-    friendly_name: Workshop Sensor Light
-  '0x00158d0006a03206':
-    friendly_name: Workshop Door Sensor
-  '0xbc33acfffea479ee':
-    friendly_name: Spare Bedroom Lamp Right
-  '0xbc33acfffebf7715':
-    friendly_name: Spare Bedroom Lamp Left
-  '0x0017880108a65271':
-    friendly_name: Office Wall Lamp
